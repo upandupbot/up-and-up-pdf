@@ -145,6 +145,9 @@ sections = [
             {"label": "Direct Sales Print / POS - Other", "get": lambda f: f.get("direct_sales_print_pos_other")},
             {"label": "Element specifications attachment(s)", "get": lambda f: attachment_name(f.get("element_specifications_attachment_s"))},
             {"label": "Element specifications free text / link(s)", "get": lambda f: f.get("element_specifications_free_text_link_s")},
+            {"id": "rollout_element_specifications", "label": "Rollout element specifications", "get": lambda f: f.get("rollout_element_specifications")},
+            {"id": "rollout_element_specifications_attachment_s", "label": "Rollout element specifications attachment(s)", "get": lambda f: f.get("rollout_element_specifications_attachment_s")},
+            {"id": "rollout_element_specifications_free_text_link_s", "label": "Rollout element specifications free text / link(s)", "get": lambda f: f.get("rollout_element_specifications_free_text_link_s")},
             {"label": "Media placement of location in which element will appear or run", "get": lambda f: f.get("media_placement_e_g_publications")},
 
         ]
@@ -154,6 +157,7 @@ sections = [
 {
         "section": "Production Brief Details",
         "fields": [
+            {"id": "brief_summary", "label": "Brief summary", "get": lambda f: f.get("brief_summary")},
             {"id": "quantity_for_printing_production", "label": "Quantity for printing / production", "get": lambda f: f.get("quantity_for_printing_production")},
             {"id": "country_of_flighting", "label": "Country of flighting", "get": lambda f: f.get("country_of_flighting")},
             {"id": "other_country_of_flighting", "label": "Other - Country of flighting", "get": lambda f: f.get("other_country_of_flighting")},
