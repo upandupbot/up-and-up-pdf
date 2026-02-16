@@ -157,7 +157,7 @@ sections = [
 {
         "section": "Production Brief Details",
         "fields": [
-            {"id": "brief_summary", "label": "Brief summary", "get": lambda f: f.get("brief_summary")},
+            {"id": "brief_overview", "label": "Production Brief Overview", "get": lambda f: f.get("brief_overview")},
             {"id": "quantity_for_printing_production", "label": "Quantity for printing / production", "get": lambda f: f.get("quantity_for_printing_production")},
             {"id": "country_of_flighting", "label": "Country of flighting", "get": lambda f: f.get("country_of_flighting")},
             {"id": "other_country_of_flighting", "label": "Other - Country of flighting", "get": lambda f: f.get("other_country_of_flighting")},
