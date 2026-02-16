@@ -131,4 +131,3 @@ def upload_pdf_to_card(card_id: int, pdf_bytes: bytes, filename: str) -> dict:
         "filename": filename,
         "status": "attached"
     }
-
