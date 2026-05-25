@@ -1,4 +1,4 @@
-from functions import get_fields, format_value, bullet_format, table_format
+from functions import get_fields, format_value, bullet_format, table_format, attachment_name
 from pipefy_helpers import fetch_card
 from fpdf import FPDF
 from layout import sections
@@ -87,7 +87,13 @@ def build_pdf(card_id: int) -> bytes:
 
         for item in section["fields"]:
             raw_value = item["get"](fields)
-            value = format_value(raw_value) # Normalise all values into strings
+            label = item["label"]
+            field_id = item.get("id", "")
+
+            if field_id.endswith("_attachment_s") or "attachment" in label.lower():
+                value = attachment_name(raw_value)
+            else:
+                value = format_value(raw_value) # Normalise all values into strings
 
             if not value:
                 continue
@@ -97,8 +103,6 @@ def build_pdf(card_id: int) -> bytes:
                 pdf.cell(0, 10, section["section"], ln=True, align="L")
                 pdf.ln(2)
                 rendered_section = True
-
-            label = item["label"]
 
             pdf.set_font("source-sans-pro-bold", "B", 12)
             pdf.multi_cell(0, 7, f"{label}:")

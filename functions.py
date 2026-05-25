@@ -72,12 +72,23 @@ def attachment_name(value):
     if not isinstance(value, str):
         return str(value)
 
+    s = value.strip()
+
+    if s.startswith("[") and s.endswith("]"):
+        try:
+            parsed = ast.literal_eval(s)
+            if isinstance(parsed, list):
+                names = [attachment_name(v) for v in parsed]
+                return "\n".join(name for name in names if name)
+        except Exception:
+            pass
+
     try:
-        path = urlparse(value).path
+        path = urlparse(s).path
         filename = path.split("/")[-1]
         return unquote(filename)
     except Exception:
-        return value
+        return s
 
 def bullet_format(pdf, text: str, w=0, line_h=7, bullet_indent=6, text_indent=12): # Need to look at what their agency font formatting will be for this
     # Make bullet points look like bullet points

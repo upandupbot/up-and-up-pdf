@@ -189,6 +189,7 @@ sections = [
     {
         "section": "Job Details",
         "fields": [
+            {"id": "creative_brief_overview", "label": "Creative brief overview", "get": lambda f: f.get("creative_brief_overview")},
             {"id": "deal_details", "label": "Brief overview", "get": lambda f: f.get("deal_details")},
             {"id": "scope_and_resource_plan", "label": "Scope and resource plan or supplier invoice to be used", "get": lambda f: f.get("scope_and_resource_plan")},
             {"id": "scope_and_resource_plan_attachment_s", "label": "Scope and resource plan or supplier invoice to be used attachment(s)", "get": lambda f: f.get("scope_and_resource_plan_attachment_s")},
@@ -254,6 +255,7 @@ sections = [
             {"id": "creative_implementation_deliverables_other", "label": "Creative implementation deliverables - Other", "get": lambda f: f.get("creative_implementation_deliverables_other")},
             {"id": "event_and_activation_management_deliverables", "label": "Event and activation management deliverables", "get": lambda f: f.get("event_and_activation_management_deliverables")},
             {"id": "production_deliverables", "label": "Production deliverables", "get": lambda f: f.get("production_deliverables")},
+            {"id": "production_brief_request_detail", "label": "Production brief request detail", "get": lambda f: f.get("production_brief_request_detail")},
             {"id": "broadcast_production_deliverables", "label": "Broadcast production deliverables", "get": lambda f: f.get("broadcast_production_deliverables")},
             {"id": "print_btl_production_deliverables", "label": "Print / BTL production deliverables", "get": lambda f: f.get("print_btl_production_deliverables")},
             {"id": "production_deliverables_other", "label": "Production deliverables - Other", "get": lambda f: f.get("production_deliverables_other")},
