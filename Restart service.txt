@@ -1,0 +1,5 @@
+ssh -i pipefy-chase-integration.pem ubuntu@ec2-18-117-164-5.us-east-2.compute.amazonaws.com
+cd up-and-up-pdf
+
+restart command:
+sudo systemctl restart up-and-up-pdf
