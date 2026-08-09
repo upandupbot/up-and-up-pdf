@@ -190,6 +190,8 @@ sections = [
         "section": "Job Details",
         "fields": [
             {"id": "creative_brief_overview", "label": "Creative brief overview", "get": lambda f: f.get("creative_brief_overview")},
+            {"id": "social_brief_overview", "label": "Social brief overview", "get": lambda f: f.get("social_brief_overview")},
+            {"id": "strategy_brief_overview", "label": "Strategy brief overview", "get": lambda f: f.get("strategy_brief_overview")},
             {"id": "deal_details", "label": "Brief overview", "get": lambda f: f.get("deal_details")},
             {"id": "scope_and_resource_plan", "label": "Scope and resource plan or supplier invoice to be used", "get": lambda f: f.get("scope_and_resource_plan")},
             {"id": "scope_and_resource_plan_attachment_s", "label": "Scope and resource plan or supplier invoice to be used attachment(s)", "get": lambda f: f.get("scope_and_resource_plan_attachment_s")},
